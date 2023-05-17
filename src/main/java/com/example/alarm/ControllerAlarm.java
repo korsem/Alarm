@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.Slider;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TextField;
+import javafx.scene.control.CheckBox;
 
 public class ControllerAlarm {
     @FXML
@@ -22,6 +24,16 @@ public class ControllerAlarm {
     @FXML
     private Label welcomeText;
 
+    @FXML
+    private TextField nameTextField;
+
+    @FXML
+    private CheckBox repeatingCheckBox;
+
+    private String alarmName;
+
+    private boolean weekly;
+
     // button wyjscia
     @FXML
     protected void outButtonClick(){
@@ -34,6 +46,19 @@ public class ControllerAlarm {
     @FXML
     protected void saveButtonClick(){
         welcomeText.setText("zapisano");
+        String alarmName = nameTextField.getText(); // pobiera nazwe budzika z pola tekstowego
+        int hour = hourSpinner.getValue(); // pobiera godzie ze spinnera
+        int minute = minuteSpinner.getValue(); // pobiera godzine ze spinnera
+        double volume = volumeSlider.getValue(); // pobiera głośnosc z suwaka
+        boolean weekly = repeatingCheckBox.hasProperties();
+
+        // tworze nowy alarm
+        Alarm alarm = new Alarm(alarmName, hour, minute, volume, weekly);
+
+        // tu musze liste budzikow zrobic
+
+        welcomeText.setText("Zapisano: " + alarm.getAlarmName()); // komunikat o zapisie
+        System.out.println(alarm.toString());
     }
 
     public void initialize() {
@@ -50,6 +75,26 @@ public class ControllerAlarm {
         // konfiguracja spinera do minuty
         SpinnerValueFactory.IntegerSpinnerValueFactory minuteFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59, 0);
         minuteSpinner.setValueFactory(minuteFactory);
-    }
 
+        // konfiguracja pola tekstowego nazwy
+        nameTextField.setText("new alarm");
+
+        // nasluchiwanie zdarzen
+        nameTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            alarmName = newValue;
+        });
+
+        // konfiguracja CheckBoxa "czy co tydzien?"
+        repeatingCheckBox.setSelected(false);
+//        weekly = false;
+
+        // nasluchiwanie zdarzen
+//        repeatingCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+//            if (newValue) {
+//                weekly = true;
+//            } else {
+//                weekly = false;
+//            }
+//        });
+    }
 }
