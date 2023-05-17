@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae39ed43-5c81-4939-bbb9-ae06c4656e67" name="Changes" comment="start">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/ControllerAlarm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/ControllerAlarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/ControllerAlarm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/alarm/alarmView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/alarm/alarmView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +70,16 @@
       <updated>1683903588595</updated>
       <workItem from="1683903590322" duration="1796000" />
       <workItem from="1684246091424" duration="3831000" />
-      <workItem from="1684328605408" duration="3959000" />
+      <workItem from="1684328605408" duration="7125000" />
     </task>
+    <task id="LOCAL-00001" summary="start">
+      <created>1684333086678</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684333086678</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

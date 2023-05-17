@@ -23,7 +23,7 @@ public class Controller {
 
         newAlarmStage.setTitle("Add New Alarm");
 
-        Scene scene = new Scene(fxmlLoader.load(), 380, 420); // height / width
+        Scene scene = new Scene(fxmlLoader.load(), 550, 450); // height / width
 
         newAlarmStage.setScene(scene);
         newAlarmStage.show();
@@ -32,7 +32,8 @@ public class Controller {
     protected void outButtonClick(){
         Stage stage = (Stage) outButton.getScene().getWindow();
 
-        // Close the stage
+        // zamkniecie stagea
         stage.close();
     }
+
 }

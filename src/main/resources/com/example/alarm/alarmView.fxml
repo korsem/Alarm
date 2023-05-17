@@ -5,16 +5,57 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="251.0" prefWidth="291.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alarm.ControllerAlarm">
+<VBox alignment="CENTER" prefHeight="251.0" prefWidth="320.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alarm.ControllerAlarm">
     <padding>
         <Insets top="10" right="20" bottom="20" left="20" />
     </padding>
 
-    <Label fx:id="welcomeText" prefHeight="40.0" prefWidth="143.0" text="Drugie okno">
+    <Label fx:id="welcomeText" prefHeight="40.0" prefWidth="143.0" text="Ustaw budzik">
         <font>
             <Font size="15.0" />
         </font></Label>
+    <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+        <Label text="Nazwa budzika:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-    <Button fx:id="outButton" onAction="#outButtonClick" text="Zakończ" />
+        <Label text="Czas:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Spinner fx:id="hourSpinner" min="0" max="23" initialValue="1"  />
+            <Label text=":" GridPane.columnIndex="2" />
+            <Spinner fx:id="minuteSpinner" min="0" max="59" initialValue="0" />
+        </HBox>
+
+        <Label text="Głośność:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Slider fx:id="volumeSlider" min="0.0" max="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Label fx:id="percentageLabel" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+        <Label text="Co tydzień:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <CheckBox fx:id="repeatingCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <Label text="Dni tygodnia:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Label text="PN"/>
+            <CheckBox fx:id="mon" />
+            <Label text="WT"/>
+            <CheckBox fx:id="tue" />
+            <Label text="SR"/>
+            <CheckBox fx:id="wen" />
+            <Label text="CZW"/>
+            <CheckBox fx:id="thu" />
+            <Label text="PT"/>
+            <CheckBox fx:id="fri" />
+            <Label text="SB"/>
+            <CheckBox fx:id="sat" />
+            <Label text="ND"/>
+            <CheckBox fx:id="sun" />
+        </HBox>
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button fx:id="outButton" onAction="#outButtonClick" text="Zakończ" />
+        <Button fx:id="saveButton" onAction="#saveButtonClick" text="Zapisz" />
+    </HBox>
+
+
 </VBox>
 
