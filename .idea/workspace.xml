@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae39ed43-5c81-4939-bbb9-ae06c4656e67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/alarm/alarmView.fxml" afterDir="false" />
+    <list default="true" id="ae39ed43-5c81-4939-bbb9-ae06c4656e67" name="Changes" comment="start">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/ControllerAlarm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/alarm/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/alarm/view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/alarm/alarmView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/alarm/alarmView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,11 +69,15 @@
       <updated>1683903588595</updated>
       <workItem from="1683903590322" duration="1796000" />
       <workItem from="1684246091424" duration="3831000" />
-      <workItem from="1684328605408" duration="3019000" />
+      <workItem from="1684328605408" duration="3959000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start" />
+    <option name="LAST_COMMIT_MESSAGE" value="start" />
   </component>
 </project>

@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
+import java.io.IOException;
 public class Controller {
     @FXML
     private Label welcomeText;
@@ -16,16 +16,16 @@ public class Controller {
     @FXML Button newAlarmButton;
 
     @FXML
-    protected void newAlarmButtonClick() {
+    protected void newAlarmButtonClick()  throws IOException{
         welcomeText.setText("dodaj alarm");
         Stage newAlarmStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("alarmView.fxml"));
+
         newAlarmStage.setTitle("Add New Alarm");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("alarmView.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(), 380, 420); // height / width
+        Scene scene = new Scene(fxmlLoader.load(), 380, 420); // height / width
 
-//        stage.setTitle("Alarm");
-//        stage.setScene(scene);
+        newAlarmStage.setScene(scene);
         newAlarmStage.show();
     }
     @FXML
