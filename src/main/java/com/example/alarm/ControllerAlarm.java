@@ -29,10 +29,11 @@ public class ControllerAlarm {
 
     @FXML
     private CheckBox repeatingCheckBox;
+    @FXML
+    private CheckBox mon, tue, wen, thu, fri, sat, sun;
 
     private String alarmName;
-
-    private boolean weekly;
+    private boolean[] weekDays = new boolean[7];
 
     // button wyjscia
     @FXML
@@ -50,10 +51,19 @@ public class ControllerAlarm {
         int hour = hourSpinner.getValue(); // pobiera godzie ze spinnera
         int minute = minuteSpinner.getValue(); // pobiera godzine ze spinnera
         double volume = volumeSlider.getValue(); // pobiera głośnosc z suwaka
-        boolean weekly = repeatingCheckBox.hasProperties();
+        boolean weekly = repeatingCheckBox.isSelected(); // pobiera wartosc czy sie powtarza
+
+        //pobiera wartosci z dni tygodnia
+        weekDays[0] = mon.isSelected();
+        weekDays[1] = tue.isSelected();
+        weekDays[2] = wen.isSelected();
+        weekDays[3] = thu.isSelected();
+        weekDays[4] = fri.isSelected();
+        weekDays[5] = sat.isSelected();
+        weekDays[6] = sun.isSelected();
 
         // tworze nowy alarm
-        Alarm alarm = new Alarm(alarmName, hour, minute, volume, weekly);
+        Alarm alarm = new Alarm(alarmName, hour, minute, volume, weekly, weekDays);
 
         // tu musze liste budzikow zrobic
 
@@ -86,15 +96,15 @@ public class ControllerAlarm {
 
         // konfiguracja CheckBoxa "czy co tydzien?"
         repeatingCheckBox.setSelected(false);
-//        weekly = false;
 
-        // nasluchiwanie zdarzen
-//        repeatingCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-//            if (newValue) {
-//                weekly = true;
-//            } else {
-//                weekly = false;
-//            }
-//        });
+        // konfiguracja dni tygodnia
+        mon.setSelected(false);
+        tue.setSelected(false);
+        wen.setSelected(false);
+        thu.setSelected(false);
+        fri.setSelected(false);
+        sat.setSelected(false);
+        sun.setSelected(false);
+
     }
 }

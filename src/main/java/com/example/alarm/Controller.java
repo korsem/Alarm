@@ -23,9 +23,10 @@ public class Controller {
 
         newAlarmStage.setTitle("Add New Alarm");
 
-        Scene scene = new Scene(fxmlLoader.load(), 550, 450); // height / width
+        Scene scene = new Scene(fxmlLoader.load(), 580, 450);
 
         newAlarmStage.setScene(scene);
+        newAlarmStage.setResizable(false);
         newAlarmStage.show();
     }
     @FXML
