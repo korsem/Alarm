@@ -1,6 +1,8 @@
 package com.example.alarm;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -9,8 +11,20 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.scene.control.CheckBox;
+import javafx.animation.PauseTransition;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import com.example.alarm.Controller;
+
+
 
 public class ControllerAlarm {
+
     @FXML
     private Button outButton;
     @FXML
@@ -35,6 +49,13 @@ public class ControllerAlarm {
     private String alarmName;
     private boolean[] weekDays = new boolean[7];
 
+    ArrayList<Alarm> savedAlarms = new ArrayList<>(); //lista zapisanych budzikow
+
+    private Controller controller;
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
+
     // button wyjscia
     @FXML
     protected void outButtonClick(){
@@ -45,7 +66,7 @@ public class ControllerAlarm {
 
     //button zapisu
     @FXML
-    protected void saveButtonClick(){
+    protected void saveButtonClick() throws InterruptedException {
         welcomeText.setText("zapisano");
         String alarmName = nameTextField.getText(); // pobiera nazwe budzika z pola tekstowego
         int hour = hourSpinner.getValue(); // pobiera godzie ze spinnera
@@ -65,10 +86,24 @@ public class ControllerAlarm {
         // tworze nowy alarm
         Alarm alarm = new Alarm(alarmName, hour, minute, volume, weekly, weekDays);
 
-        // tu musze liste budzikow zrobic
+        // dodaje do mojej listy budzikow
+        savedAlarms.add(alarm);
+
+        // zmiana labela w drugim oknie
+        if (controller != null) {
+            controller.updateActiveAlarmsText(savedAlarmsToString());
+        }
 
         welcomeText.setText("Zapisano: " + alarm.getAlarmName()); // komunikat o zapisie
         System.out.println(alarm.toString());
+
+        // chce zeby wyswietlilo mi nazwe budzika ktory zostal zapisany zanim sie zamknie
+        PauseTransition delay = new PauseTransition(Duration.seconds(3));
+        delay.setOnFinished(event -> {
+            Stage stage = (Stage) outButton.getScene().getWindow();
+            stage.close();
+        });
+        delay.play();
     }
 
     public void initialize() {
@@ -106,5 +141,13 @@ public class ControllerAlarm {
         sat.setSelected(false);
         sun.setSelected(false);
 
+
+    }
+    public String savedAlarmsToString() {
+        String alarms = "";
+        for (Alarm alarm : savedAlarms) {
+            alarms += alarm.toString() + "/n";
+        }
+        return alarms;
     }
 }

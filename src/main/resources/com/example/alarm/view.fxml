@@ -5,15 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="251.0" prefWidth="291.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alarm.Controller">
+<VBox alignment="CENTER" prefHeight="251.0" prefWidth="291.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alarm.Controller" >
     <padding>
         <Insets top="10" right="20" bottom="20" left="20" />
     </padding>
 
-    <Label fx:id="welcomeText" prefHeight="40.0" prefWidth="143.0" text="Aktywne alarmy">
+    <Label fx:id="welcomeText" prefHeight="40.0" prefWidth="143.0" text="Aktywne alarmy:">
       <font>
          <Font size="15.0" />
       </font></Label>
+    <Label fx:id="activeAlarms" prefHeight="140.0" prefWidth="150.0">
+        <font>
+            <Font size="8.0" />
+        </font></Label>
     <HBox spacing="10" alignment="BOTTOM_CENTER">
         <Button fx:id="newAlarmButton" onAction="#newAlarmButtonClick" text="Dodaj alarm" />
         <Button fx:id="outButton" onAction="#outButtonClick" text="Zakończ" />

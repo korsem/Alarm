@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae39ed43-5c81-4939-bbb9-ae06c4656e67" name="Changes" comment="save #1">
+    <list default="true" id="ae39ed43-5c81-4939-bbb9-ae06c4656e67" name="Changes" comment="save #2 (weekdays)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/alarm/ControllerAlarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/alarm/ControllerAlarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/alarm/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/alarm/view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -69,7 +72,8 @@
       <workItem from="1683903590322" duration="1796000" />
       <workItem from="1684246091424" duration="3831000" />
       <workItem from="1684328605408" duration="8617000" />
-      <workItem from="1684488440169" duration="1986000" />
+      <workItem from="1684488440169" duration="8913000" />
+      <workItem from="1684665597459" duration="3406000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1684333086678</created>
@@ -92,16 +96,41 @@
       <option name="project" value="LOCAL" />
       <updated>1684337439654</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="save #2 (weekdays)">
+      <created>1684490741422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684490741422</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
     <MESSAGE value="+add alarm stage" />
     <MESSAGE value="save #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="save #1" />
+    <MESSAGE value="save #2 (weekdays)" />
+    <option name="LAST_COMMIT_MESSAGE" value="save #2 (weekdays)" />
   </component>
 </project>

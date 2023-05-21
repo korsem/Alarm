@@ -2,11 +2,13 @@ package com.example.alarm;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import com.example.alarm.ControllerAlarm;
+
 import java.io.IOException;
 public class Controller {
     @FXML
@@ -14,21 +16,34 @@ public class Controller {
     @FXML
     private Button outButton;
     @FXML Button newAlarmButton;
+    @FXML
+    public Label activeAlarms;
 
+    public Label getActiveAlarms() {
+        return activeAlarms;
+    }
+
+    public void updateActiveAlarmsText(String text) {
+        activeAlarms.setText(text);
+    }
     @FXML
     protected void newAlarmButtonClick()  throws IOException{
-        welcomeText.setText("dodaj alarm");
-        Stage newAlarmStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("alarmView.fxml"));
+            welcomeText.setText("dodaj alarm");
 
-        newAlarmStage.setTitle("Add New Alarm");
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("alarmView.fxml"));
+            Parent alarmView = fxmlLoader.load();
 
-        Scene scene = new Scene(fxmlLoader.load(), 580, 450);
+            // ustawiam controller do którego odwołuhe się w ControllerAlarm aby zmienic dodane alarmy
+            ControllerAlarm controllerAlarm = fxmlLoader.getController();
+            controllerAlarm.setController(this);
 
-        newAlarmStage.setScene(scene);
-        newAlarmStage.setResizable(false);
-        newAlarmStage.show();
-    }
+            Stage newAlarmStage = new Stage();
+            newAlarmStage.setTitle("Add New Alarm");
+            Scene scene = new Scene(alarmView, 580, 450);
+            newAlarmStage.setScene(scene);
+            newAlarmStage.setResizable(false);
+            newAlarmStage.show();
+        }
     @FXML
     protected void outButtonClick(){
         Stage stage = (Stage) outButton.getScene().getWindow();
