@@ -91,14 +91,13 @@ public class ControllerAlarm {
 
         // zmiana labela w drugim oknie
         if (controller != null) {
-            controller.updateActiveAlarmsText(savedAlarmsToString());
+            controller.updateActiveAlarmsText(alarm.toString() + "\n");
         }
 
         welcomeText.setText("Zapisano: " + alarm.getAlarmName()); // komunikat o zapisie
-        System.out.println(alarm.toString());
 
         // chce zeby wyswietlilo mi nazwe budzika ktory zostal zapisany zanim sie zamknie
-        PauseTransition delay = new PauseTransition(Duration.seconds(3));
+        PauseTransition delay = new PauseTransition(Duration.seconds(2));
         delay.setOnFinished(event -> {
             Stage stage = (Stage) outButton.getScene().getWindow();
             stage.close();
@@ -140,14 +139,5 @@ public class ControllerAlarm {
         fri.setSelected(false);
         sat.setSelected(false);
         sun.setSelected(false);
-
-
-    }
-    public String savedAlarmsToString() {
-        String alarms = "";
-        for (Alarm alarm : savedAlarms) {
-            alarms += alarm.toString() + "/n";
-        }
-        return alarms;
     }
 }

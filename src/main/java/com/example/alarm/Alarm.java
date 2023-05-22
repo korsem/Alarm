@@ -41,8 +41,8 @@ public class Alarm {
 
     @Override
     public String toString() {
-        return "alarmName='" + alarmName + '\'' +
-                ", time=" + hour +
+        return alarmName + '\'' +
+                ": time=" + hour +
                 ":" + minute +
                 ", vol=" + Math.round(volume) +
                 "%, weekly=" + weekly +

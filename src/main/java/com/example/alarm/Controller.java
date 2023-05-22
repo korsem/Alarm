@@ -24,7 +24,7 @@ public class Controller {
     }
 
     public void updateActiveAlarmsText(String text) {
-        activeAlarms.setText(text);
+        activeAlarms.setText(activeAlarms.getText()+text);
     }
     @FXML
     protected void newAlarmButtonClick()  throws IOException{
