@@ -16,6 +16,3 @@ wszystkich wymaganych elementów!, Państwa okna mogą być inne, to tylko przyk
 Aplikacja nie ma być w pełni funkcjonalnym budzikiem, w sensie ma nie dzwonić. Jej działanie ma
 polegać tylko na wyświetlaniu oka, umożliwianiu ustawienia budzika i wyświetlaniu ich. Nie ma
 mierzyć czasu itd.
-Nie będzie oceniany wygląd elementów, mogą być użyte dowolne kolory, wielkość, ustawienie ich w
-oknie. Oceniane będzie działanie (otwieranie, zamykanie okien, pojawianie się ustawionego budzika)
-oraz występowanie wszystkich wymaganych elementów w oknach (podkreślone elemen
