@@ -1,3 +1,7 @@
+# Alarm
+### Simple alarm setting app with JavaFX
+
+## Discription
 Aplikacja ma zawierać dwa okna. W pierwszym mają być wyświetlane ustawione już budziki oraz
 mają być dwa przyciski: jeden ma dodawać nowy budzik, drugi ma zamykać aplikację. Po
 uruchomieniu aplikacji okno to ma być puste (nie trzeba zapisywać gdzieś budzików ustawionych
